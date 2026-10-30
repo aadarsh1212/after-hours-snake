@@ -18,4 +18,16 @@ Scores and color preferences are stored in this browser for this origin. Localho
 
 Run `npm run check` and `npm run build`. [build.cjs](build.cjs) publishes only the three browser assets into `dist`. [vercel.json](vercel.json) uses Vercel's static hosting. Local credentials, configuration, and generated artifacts are excluded from Git.
 
-Deployment URLs and verification status will be recorded after publishing.
+- **Play:** https://after-hours-snake-xi.vercel.app/
+- **Private source repository:** https://github.com/aadarsh1212/after-hours-snake
+- **Vercel project:** https://vercel.com/orion-d52a/after-hours-snake
+
+Deployed on 2026-10-30 using the authenticated Vercel CLI in the existing Orion team. Public production access is verified without sign-in. Preview deployments retain Vercel Authentication.
+
+Automatic GitHub deployment is **not connected**: Vercel's project-link API reports that the private repository cannot be found/accessed. Grant the Vercel GitHub App access to this repository, then run `vercel git connect https://github.com/aadarsh1212/after-hours-snake --yes --scope orion-d52a`. Until connected, publish with `vercel deploy --prod --yes --scope orion-d52a` from this folder.
+
+## Verification
+
+Syntax checks and the static build passed. [Deployment smoke checks](tests/deployment-smoke.cjs) passed against the public URL in headless Chrome: anonymous HTTP 200, browser assets, preset/custom color updates and persistence, start, movement, turning, pause/resume, wall collision, restart, mobile direction controls, and no page overflow at 320/390/768/1440/1920 pixels. No JavaScript exceptions were observed. A narrow-phone layout issue discovered during testing was corrected and redeployed.
+
+To rerun, install Playwright in a test-only location, then run `node tests/deployment-smoke.cjs` with `PLAYWRIGHT_PATH` and `CHROME_PATH` set as needed. `GAME_URL` overrides the test target. Results and screenshots are generated under the Git-ignored `artifacts/ui` directory; tests and screenshots are never served by the static build.

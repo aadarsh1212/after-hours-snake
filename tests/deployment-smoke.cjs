@@ -67,7 +67,8 @@ fs.mkdirSync(out, { recursive: true });
     assert(await page.locator('.touch-controls').isVisible());
     await page.locator('#restart').click();
     await page.locator('[data-dir="up"]').dispatchEvent('pointerdown', { pointerId: 1, pointerType: 'touch' });
-    await page.clock.runFor(120);
+    // Allow at least one whole 115 ms tick plus animation-frame scheduling slack.
+    await page.clock.runFor(250);
     assert.equal(await page.evaluate(() => direction.y), -1);
     await page.locator('#pause').click();
     await page.screenshot({ path: path.join(out, 'production-mobile.png'), fullPage: true });
