@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AFTER HOURS — Snake</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Minimal retro arcade: responsive grid arena, live neon palette, keyboard and touch controls. -->
+<main class="arcade">
+<header><a class="brand" href="./"><span class="brand-mark">▦</span> AFTER HOURS<span class="arcade-tag">ARCADE / 001</span></a><span class="status"><i></i> ALL SYSTEMS PLAY</span></header>
+<section class="title-row"><div><p class="eyebrow">THE CLASSICS, REWIRED</p><h1>SNAKE<span>_</span></h1><p class="subtitle">Stay hungry. Stay sharp. Don't cross yourself.</p></div><div class="edition">EST. 1976 <span>↗</span><br><small>REIMAGINED FOR NOW</small></div></section>
+<div class="layout"><section class="game-column" aria-label="Snake game">
+<div class="arena-top"><span><i class="live-dot"></i> <span id="game-status">READY TO PLAY</span></span><span>24 × 24 <b>/</b> CLASSIC</span></div>
+<div class="arena" id="arena"><canvas id="game" aria-label="Snake arena. Use arrow keys or WASD to move."></canvas><div class="overlay" id="overlay"><div class="overlay-icon">↳</div><p class="eyebrow" id="overlay-kicker">ONE MORE BITE</p><h2 id="overlay-title">Small snake.<br>Big ambition.</h2><p id="overlay-description">Collect. Grow. Repeat.</p><button class="primary" id="start">LET'S PLAY <span>↗</span></button><small id="start-hint">PRESS ENTER TO START</small></div></div>
+<div class="arena-bottom"><span><span class="key">↑</span><span class="key">←</span><span class="key">↓</span><span class="key">→</span> or <b>W A S D</b> to move</span><span><span class="key wide">SPACE</span> pause</span></div>
+<div class="touch-controls" aria-label="Directional controls"><button data-dir="up" aria-label="Move up">↑</button><div><button data-dir="left" aria-label="Move left">←</button><button data-dir="down" aria-label="Move down">↓</button><button data-dir="right" aria-label="Move right">→</button></div></div>
+</section>
+<aside><div class="score-grid"><section class="panel score"><p class="eyebrow">YOUR SCORE</p><strong id="score" aria-live="polite">000</strong><span>MAKE EVERY BITE COUNT</span></section><section class="panel score high"><p class="eyebrow"><span>♜</span> PERSONAL BEST</p><strong id="best">000</strong><span id="best-caption">YOUR NEXT CHALLENGE</span></section></div>
+<section class="panel customize"><div class="panel-heading"><h3>YOUR SNAKE, YOUR STYLE</h3><span>◈</span></div><p>A little color. A lot of personality.</p><div class="snake-preview" aria-hidden="true"><div class="preview-body"><i></i><i></i><i></i><i></i><i class="head"><b></b><b></b></i></div><span>LOOKING SHARP</span></div><div class="palette" role="group" aria-label="Snake color"><button data-color="#b4f76c" data-name="Acid green" aria-label="Acid green" aria-pressed="true" style="--swatch:#b4f76c"></button><button data-color="#53e5ee" data-name="Electric cyan" aria-label="Electric cyan" aria-pressed="false" style="--swatch:#53e5ee"></button><button data-color="#a68aff" data-name="Ultraviolet" aria-label="Ultraviolet" aria-pressed="false" style="--swatch:#a68aff"></button><button data-color="#ff77bc" data-name="Hot pink" aria-label="Hot pink" aria-pressed="false" style="--swatch:#ff77bc"></button><button data-color="#ffab62" data-name="Tangerine" aria-label="Tangerine" aria-pressed="false" style="--swatch:#ffab62"></button></div><div class="custom-color"><span id="color-name">ACID GREEN</span><label for="color-picker">Custom <span>＋</span><input id="color-picker" type="color" value="#b4f76c" aria-label="Custom snake color"></label></div></section>
+<section class="panel controls"><h3>TAKE CONTROL</h3><div class="button-row"><button id="pause" disabled><span>Ⅱ</span> Pause <kbd>␣</kbd></button><button id="restart"><span>↻</span> Restart <kbd>R</kbd></button></div><div class="speed-row"><label for="speed">PACE</label><select id="speed"><option value="160">Chill</option><option value="115" selected>Classic</option><option value="75">Fast</option></select></div></section>
+<div class="how-to"><span>✳</span><p>Find your rhythm.<br><strong>Chase the glow, not your tail.</strong></p></div></aside></div>
+<footer><span>NO DOWNLOADS. NO DISTRACTIONS. JUST ONE MORE GAME.</span><span>BUILT FOR THE HIGH SCORE <span class="footer-star">✳</span></span></footer>
+</main><script src="game.js"></script></body></html>

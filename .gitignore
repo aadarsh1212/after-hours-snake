@@ -1,0 +1,9 @@
+# Local credentials and generated output must never be published.
+.vercel/
+node_modules/
+dist/
+.env
+.env.*
+*.log
+.DS_Store
+artifacts/

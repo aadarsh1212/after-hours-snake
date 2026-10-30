@@ -1,0 +1,10 @@
+{
+  "name": "after-hours-snake",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minimalist neon snake arcade with instant color customization",
+  "scripts": {
+    "build": "node build.cjs",
+    "check": "node --check game.js && node --check build.cjs"
+  }
+}
