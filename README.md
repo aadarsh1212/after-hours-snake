@@ -24,7 +24,9 @@ Run `npm run check` and `npm run build`. [build.cjs](build.cjs) publishes only t
 
 Deployed on 2026-10-30 using the authenticated Vercel CLI in the existing Orion team. Public production access is verified without sign-in. Preview deployments retain Vercel Authentication.
 
-Automatic GitHub deployment is **not connected**: Vercel's project-link API reports that the private repository cannot be found/accessed. Grant the Vercel GitHub App access to this repository, then run `vercel git connect https://github.com/aadarsh1212/after-hours-snake --yes --scope orion-d52a`. Until connected, publish with `vercel deploy --prod --yes --scope orion-d52a` from this folder.
+The private GitHub repository is now **connected to Vercel**. Vercel's project API confirms `github`, owner `aadarsh1212`, repository `after-hours-snake`, and production branch `main`. Push changes to `main` to trigger production deployments. Direct CLI publishing remains available with `vercel deploy --prod --yes --scope orion-d52a` from this folder.
+
+This documentation update is the first push used to verify the newly connected automatic deployment pipeline.
 
 ## Verification
 
